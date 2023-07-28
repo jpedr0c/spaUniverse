@@ -12,8 +12,8 @@
 <body>
   <nav>
     <ul>
-      <img src="/assets/logo.svg" alt="Logo do SPA Universe">
-      <a id="pageHome" href="/"><li>Home</li></a>
+      <a id="logo" href="/"><img src="/assets/logo.svg" alt="Logo do SPA Universe"></a>
+      <a id="pageHome" href="/" class="selected"><li>Home</li></a>
       <a id="pageUniverse" href="/universe"><li>Universo</li></a>
       <a id="pageExploration" href="/exploration"><li>Exploração</li></a>
     </ul>
@@ -21,43 +21,6 @@
 
   <div id="app"></div>
 
-  <script>
-    const pageHome = document.getElementById('pageHome');
-    const pageUniverse = document.getElementById('pageUniverse');
-    const pageExploration = document.getElementById('pageExploration');
-    const routes = {
-      "/": "/pages/home.html",
-      "/universe": "/pages/universe.html",
-      "/exploration": "/pages/exploration.html",
-      404: "/pages/404.html",
-    }
-
-    function route(event) {
-      event = event || window.event
-      event.preventDefault();
-
-      const href = event.currentTarget.href;
-      const url = new URL(href);
-      const routePath = url.pathname;
-
-      window.history.pushState({}, "", routePath)
-
-      handle();
-    }
-
-    function handle() {
-      const { pathname } = window.location;
-      const route = routes[pathname] || routes[404];
-      fetch(route).then(data => data.text()).then(html => {
-        document.querySelector("#app").innerHTML = html;
-      })
-    }
-
-    pageHome.addEventListener('click', route);
-    pageUniverse.addEventListener('click', route);
-    pageExploration.addEventListener('click', route);
-
-    handle();
-  </script>
+  <script src="./src/index.js" type="module"></script>
 </body>
 </html>
