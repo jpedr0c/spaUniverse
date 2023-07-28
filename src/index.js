@@ -38,6 +38,7 @@ pageExploration.addEventListener('click', () => {
 
 router.handle();
 
-//TODO: Arrumar quando navegar pela seta do navegar tem que trocar o selected
+//TODO: Arrumar quando navegar pela seta do navegador tem que trocar o selected
+// TODO: Quando atualizar a página tem que colocar o selected correto conforme a página que está atualmente
 
 window.onpopstate = () => router.handle();
