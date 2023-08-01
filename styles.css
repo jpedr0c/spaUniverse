@@ -57,6 +57,11 @@ nav ul li{
   height: calc(100% - 9rem);
 }
 
+#app img#pageNotFound{
+  max-width: 35rem;
+  max-height: 35rem;
+}
+
 #app h1{
   font-size: 4.8rem;
   font-weight: 700;
